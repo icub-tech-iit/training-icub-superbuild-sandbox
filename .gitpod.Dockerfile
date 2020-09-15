@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install icub-common metapackage
 
-RUN sh -c 'echo "deb http://www.icub.org/ubuntu `lsb_release -cs` contrib/science" > /etc/apt/sources.list.d/icub.list'
+RUN sh -c 'echo "deb http://www.icub.org/ubuntu `bionic -cs` contrib/science" > /etc/apt/sources.list.d/icub.list'
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
 RUN apt update
 RUN apt install icub-common
