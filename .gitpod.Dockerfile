@@ -7,14 +7,8 @@ ARG ICUB_COMMON_PKG=https://github.com/robotology/icub-main/releases/download/v1
 # Non-interactive installation mode
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install icub-common metapackage
-
-RUN sh -c 'echo "deb http://www.icub.org/ubuntu focal contrib/science" > /etc/apt/sources.list.d/icub.list'
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
-RUN apt update
-RUN apt install icub-common
-
 # Install essentials
+RUN apt update
 RUN apt install -y apt-utils software-properties-common apt-transport-https sudo psmisc lsb-release \
         tmux nano wget build-essential git cmake cmake-curses-gui autoconf locales gdebi terminator
 
@@ -28,6 +22,13 @@ RUN apt install -y xfce4 xfce4-goodies xserver-xorg-video-dummy xserver-xorg-leg
 # Install python
 RUN apt install -y python3 python3-dev python3-pip python3-setuptools && \
     if [ ! -f "/usr/bin/python" ]; then ln -s /usr/bin/python3 /usr/bin/python; fi
+
+# Install icub-common metapackage
+
+RUN sh -c 'echo "deb http://www.icub.org/ubuntu focal contrib/science" > /etc/apt/sources.list.d/icub.list'
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
+RUN apt update
+RUN apt install icub-common
 
 # Install noVNC
 RUN git clone https://github.com/novnc/noVNC.git /opt/novnc && \
