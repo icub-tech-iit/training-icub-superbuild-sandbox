@@ -16,7 +16,7 @@ is `icub-head` (or `pc104` in older iCub versions). This documentation provides 
 use the robotology-superbuild on the computer contained in the head of the iCub robot and its respective laptop(usually called `icubsrv`). 
 
 **Warning: if your iCub robot is not currently using the robotology-superbuild, do not attempt to migrate it
-without coordinating with the iCub support.  For any doubt, please open an issue at https://github.com/robotology/icub-tech-support.**
+without coordinating with the iCub support. For any doubt, please open an issue at [`robotology/icub-tech-support`](https://github.com/robotology/icub-tech-support/issues).**
 
 ## Prepare your system 
 The operating system contained in the `icub-head`/`pc104` is tipically installed by IIT, for more information on it, please
