@@ -65,7 +65,40 @@ make
 ## Folder tree of robotology-superbuild
 
 One of the main difference to get used to is the different folder tree structure respect the old approach with the clone of the single repositories.
-TBF
+Once you have correctly installed the `robotology-superbuild` you will have this folder tree for `icub-head`:
+```
+└── robotology-superbuild
+...
+    └── robotology
+        ├── ICUB
+        ├── ICUBcontrib
+        ├── RobotTestingFramework
+        ├── YARP
+        ├── YCM
+        ├── icub-tests
+        ├── icub_firmware_shared
+        └── robots-configuration
+```
+
+And this folder tree on `icubsrv`:
+
+```
+└── robotology-superbuild
+...
+    └── robotology
+        ├── ICUB
+        ├── ICUBcontrib
+        ├── RobotTestingFramework
+        ├── YARP
+        ├── YCM
+        ├── funny-things
+        ├── icub-basic-demos
+        ├── icub-tests
+        ├── robots-configuration
+        └── speech
+```
+
+These folder trees are reflected also in the build directory.
 
 
 ## Run the software 
