@@ -10,4 +10,4 @@ tasks:
 - command: start-vnc-session.sh
 - command: gp await-port 6080 && gp preview $(gp url 6080)
 - command: cd ${HOME} && wget https://raw.githubusercontent.com/icub-tech-iit/icub-setup-installation/master/.bashrc_iCub
-- command: cd ${HOME} && wget https://raw.githubusercontent.com/icub-tech-iit/icub-setup-installation/master/.bashrc && cd -
+- command: echo 'if [ -f ~/.bashrc_iCub ]; then\n . ~/.bashrc_iCub\nfi' | cat - ~/.bashrc > temp && mv temp ~/.bashrc && rm temp
