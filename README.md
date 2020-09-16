@@ -4,7 +4,7 @@
 
 ## Assignment :teacher:
 
-Open the gitpod :point_up: and try to follow the instructions for the setup of `icub-head` and then `icubsrv`.
+Open the gitpod :point_up: and install the `robotology-superbuild` following the instructions for the setup of [`icub-head`](https://github.com/icub-tech-iit/icub-setup-installation#get-software-source-code-compile-and-install---icub-head) and then for the setup of [`icubsrv`](https://github.com/icub-tech-iit/icub-setup-installation#get-software-source-code-compile-and-install---icubsrv).
 
 ## Introduction 
 
