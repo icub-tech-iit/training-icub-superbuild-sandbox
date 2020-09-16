@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install essentials
 RUN apt update
-RUN apt install -y apt-utils software-properties-common apt-transport-https sudo psmisc lsb-release \
+RUN apt install -y apt-utils software-properties-common apt-transport-https tree gedit sudo psmisc lsb-release \
         tmux nano wget build-essential git cmake cmake-curses-gui autoconf locales gdebi terminator
 
 # Set the locale
