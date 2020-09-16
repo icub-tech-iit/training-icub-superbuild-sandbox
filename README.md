@@ -2,6 +2,10 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/icub-tech-iit/icub-setup-installation)
 
+## Assignment :teacher:
+
+Open the gitpod :point_up: and try to follow the instructions for the setup of `icub-head` and then `icubsrv`.
+
 ## Introduction 
 
 This repository contains instructions and sandboxes for the SW setup of iCub cluster using the [`robotology-superbuild`](https://github.com/robotology/robotology-superbuild).
@@ -51,7 +55,7 @@ If you need to use other *superbuild profiles*, they can be easily enabled with 
 `CFW2CANAPI_DIR` environmental variables, in addition to all the environmental variable already defined  in that file.
 See the main robotology-superbuild README for more detailed information.**
 
-
+**Important: since [`icub-firmware-build`]("https://github.com/robotology/icub-firmware-build") does not contains sources to be compiled, but just binaries, it is not included in the superbuild, then it has to be cloned separately.**
 ## Get software source code, compile and install - `icubsrv`
 
 The steps for setupping the `icubsrv` are the same, but are different the flags needed in the configuration phase of the superbuild:
@@ -112,7 +116,6 @@ For example, you can find the `YARP` build directory in `$ROBOT_CODE/robotology-
 
 If the `make` command of the robotology-superbuild was successful, you just need to reboot the machine (or source again the `.bashrc_iCub`  file) and 
 you will then be ready to use all the software provided by the robotology-superbuild.
-
 
 ## Existing Wiki Documentation 
 Most of the existing documentation regarding the installation of the software on the pc104/icub-head 
