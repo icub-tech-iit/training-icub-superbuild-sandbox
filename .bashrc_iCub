@@ -8,7 +8,7 @@ if [ "$PS1" ]; then
   echo "Setting up yarp and iCub env vars"
 fi
 # YARP and iCub enviroment variables
-export ROBOT_CODE=/home/gitpod/workspace
+export ROBOT_CODE=/workspace
 # Set the name of build path here
 #export OBJ_SUBDIR="build"
 if [ "$OBJ_SUBDIR" != "" ]; then
