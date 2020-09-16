@@ -30,8 +30,9 @@ On a new machine, this directory should be empty. All the relevant software can 
 cd /usr/local/src/robot
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
+git checkout v<release>
 mkdir build
-cmake -DROBOTOLOGY_PROJECT_TAGS=Custom -DROBOTOLOGY_PROJECT_TAGS_CUSTOM_FILE=${ROBOT_CODE}/robotology-superbuild/releases/<release>.yaml -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON ..
+cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON ..
 make
 ~~~
 where `<release>` is the release version on which the iCub has to be setupped.
@@ -59,8 +60,9 @@ The steps for setupping the `icubsrv` are the same, but are different the flags 
 cd /usr/local/src/robot
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
+git checkout v<release>
 mkdir build
-cmake -DROBOTOLOGY_PROJECT_TAGS=Custom -DROBOTOLOGY_PROJECT_TAGS_CUSTOM_FILE=${ROBOT_CODE}/robotology-superbuild/releases/<release>.yaml -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON ..
+cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON ..
 make
 ~~~
 
