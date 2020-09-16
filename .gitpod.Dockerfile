@@ -28,6 +28,9 @@ RUN apt install -y libeigen3-dev build-essential cmake cmake-curses-gui coinor-l
 # Python
 RUN apt install -y python3-numpy
 
+# Setup .bashrc_iCub
+RUN wget -O ${HOME}/.bashrc_iCub https://git.robotology.eu/MBrunettini/icub-environment/raw/master/bashrc_iCub_superbuild
+
 # Install noVNC
 RUN git clone https://github.com/novnc/noVNC.git /opt/novnc && \
     git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \
