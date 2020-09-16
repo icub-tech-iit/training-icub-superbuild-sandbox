@@ -31,9 +31,11 @@ cd /usr/local/src/robot
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 mkdir build
-cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON ..
+cmake -DROBOTOLOGY_PROJECT_TAGS=Custom -DROBOTOLOGY_PROJECT_TAGS_CUSTOM_FILE=${ROBOT_CODE}/robotology-superbuild/releases/<release>.yaml -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON ..
 make
 ~~~
+where `<release>` is the release version on which the iCub has to be setupped.
+
 The main difference over the standard installation of the robotology-superbuild, is that the `ROBOTOLOGY_USES_GAZEBO` option
 is disabled (as the Gazebo is tipically not installed in the `icub-head`/`pc104` machine) and the `ROBOTOLOGY_ENABLE_ICUB_HEAD` option
 is enabled, to enable all the YARP devices that are necessary to interface with the internal communication bus of the iCub robot.
@@ -58,9 +60,11 @@ cd /usr/local/src/robot
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 mkdir build
-cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON ..
+cmake -DROBOTOLOGY_PROJECT_TAGS=Custom -DROBOTOLOGY_PROJECT_TAGS_CUSTOM_FILE=${ROBOT_CODE}/robotology-superbuild/releases/<release>.yaml -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON ..
 make
 ~~~
+
+where `<release>` is the release version on which the iCub has to be setupped.
 
 ## Folder tree of robotology-superbuild
 
@@ -99,6 +103,7 @@ And this folder tree on `icubsrv`:
 ```
 
 These folder trees are reflected also in the build directory.
+For example, you can find the `YARP` build directory in `$ROBOT_CODE/robotology-superbuild/build/robotology/YARP`.
 
 
 ## Run the software 
