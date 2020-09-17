@@ -77,11 +77,14 @@ USER gitpod
 # Create the Desktop dir
 RUN mkdir -p /home/gitpod/Desktop
 
+# Switch back to root
+USER root
+
 # Create the robot code dir
 RUN mkdir -p /usr/local/src/robot
 
-# Switch back to root
-USER root
+# Assign rights to gitpod user
+RUN chown gitpod /usr/local/src/robot
 
 # Manage x11vnc, noVNC, and yarp ports
 EXPOSE 5901 6080 10000/tcp 10000/udp
