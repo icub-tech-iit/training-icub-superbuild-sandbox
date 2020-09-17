@@ -77,6 +77,9 @@ USER gitpod
 # Create the Desktop dir
 RUN mkdir -p /home/gitpod/Desktop
 
+# Create the robot code dir
+RUN mkdir -p /usr/local/src/robot
+
 # Switch back to root
 USER root
 
