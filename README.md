@@ -1,14 +1,25 @@
 # icub-setup-installation
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/icub-tech-iit/icub-setup-installation)
-
-## Assignment :teacher:
+## TOC 📑
+* [Assignment 👨‍🏫](#assignment------📑)
+* [Introduction ℹ](#introduction--)
+* [Prepare your system :gear:](#prepare-your-system--gear-)
+  + [Env variables 🌐](#env-variables---)
+  👨‍🏫+ [Dependencies :books:](#dependencies--books-)
+* [Get software source code, compile and install - `icub-head` :robot:](#get-software-source-code--compile-and-install----icub-head---robot-)
+* [Get software source code, compile and install - `icubsrv` :computer:](#get-software-source-code--compile-and-install----icubsrv---computer-)
+* [Folder tree of robotology-superbuild :leaf:](#folder-tree-of-robotology-superbuild--leaf-)
+* [Run the software :rocket:](#run-the-software--rocket-)
+* [Existing Wiki Documentation 👓](#existing-wiki-documentation---)
+* [FAQ 🙋🏻‍♂️](#faq--------)
+## Assignment 👨‍🏫
 
 Open the gitpod :point_up: and install the `robotology-superbuild` following the instructions for the setup of [`icub-head`](https://github.com/icub-tech-iit/icub-setup-installation#get-software-source-code-compile-and-install---icub-head) and then for the setup of [`icubsrv`](https://github.com/icub-tech-iit/icub-setup-installation#get-software-source-code-compile-and-install---icubsrv).
 
-## Introduction 
+## Introduction ℹ
 
-This repository contains instructions and sandboxes for the SW setup of iCub cluster using the [`robotology-superbuild`](https://github.com/robotology/robotology-superbuild).
+This repository contains instructions and sandboxes for the SW setup of the iCub cluster using the [`robotology-superbuild`](https://github.com/robotology/robotology-superbuild).
 
 One of the main goals of the robotology-superbuild is to simplify downloading and building all the software 
 that is necessary to have on the main control computer contained in the head of the iCub robot, whose hostname 
@@ -18,8 +29,8 @@ use the robotology-superbuild on the computer contained in the head of the iCub 
 **Warning: if your iCub robot is not currently using the robotology-superbuild, do not attempt to migrate it
 without coordinating with the iCub support. For any doubt, please open an issue at [`robotology/icub-tech-support`](https://github.com/robotology/icub-tech-support/issues).**
 
-## Prepare your system 
-### Env variables
+## Prepare your system :gear:
+### Env variables 🌐
 The operating system contained in the `icub-head`/`pc104` is tipically installed by IIT, for more information on it, please
 check the relevant documentation at http://wiki.icub.org/wiki/The_Linux_on_the_pc104.
 
@@ -30,7 +41,7 @@ After you modified the `.bashrc_iCub` script, reboot the computer and  in a new 
 If `ROBOTOLOGY_SUPERBUILD_SOURCE_DIR` contains `/usr/local/src/robot/robotology-superbuild`, and `YARP_ROBOT_NAME` contains the string specific to your robot,
 then the modification of the `.bashrc_iCub` was successful. 
 
-### Dependencies
+### Dependencies :books:
 
 Before proceeding with the installation of the superbuild, it is necessary to install the dependencies of our software.
 This can be done simply following these steps:
@@ -46,7 +57,7 @@ where `<distro>` is the ubuntu\debian distribution(e.g `xenial`, `bionic`, `bust
 
 :warning: note that since in gitpod is not possible to execute sudo commands(e.g. `sudo apt install ..`), the dependencies are already installed in the docker, then this step is not part of the assignment. 
 
-## Get software source code, compile and install - `icub-head`
+## Get software source code, compile and install - `icub-head` :robot:
 On the `icub-head`/`pc104`, the software repository necessary to run the iCub robot are contained in the `/usr/local/src/robot` directory.
 On a new machine, this directory should be empty. All the relevant software can download and build with the following commands:
 ~~~sh
@@ -74,12 +85,13 @@ If you need to use other *superbuild profiles*, they can be easily enabled with 
 **Important: do not run `make install` for the superbuild: the superbuild already installs all the software in 
 `/usr/local/src/robot/robotology-superbuild/build/install`, and installing the software elsewhere on the robot is not currently supported.**
 
-**Important: If you are using an old iCub that still uses the CAN internal bus, you also need to enable the `ROBOTOLOGY_USES_CFW2CAN` CMake option. Note that in this case the `.bashrc_iCub` file should also contain the definition of the 
+**Important: If you are using an old iCub that still uses the CAN internal bus, you also need to enable the `ROBOTOLOGY_USES_CFW2CAN` CMake option. Note that in this case, the `.bashrc_iCub` file should also contain the definition of the 
 `CFW2CANAPI_DIR` environmental variables, in addition to all the environmental variable already defined  in that file.
 See the main robotology-superbuild README for more detailed information.**
 
 **Important: since [`icub-firmware-build`]("https://github.com/robotology/icub-firmware-build") does not contains sources to be compiled, but just binaries, it is not included in the superbuild, then it has to be cloned separately.**
-## Get software source code, compile and install - `icubsrv`
+
+## Get software source code, compile and install - `icubsrv` :computer:
 
 The steps for setupping the `icubsrv` are the same, but are different the flags needed in the configuration phase of the superbuild:
 
@@ -95,7 +107,7 @@ make
 
 where `<release>` is the release version on which the iCub has to be setupped.
 
-## Folder tree of robotology-superbuild
+## Folder tree of robotology-superbuild :leaf:
 
 One of the main difference to get used to is the different folder tree structure respect the old approach with the clone of the single repositories.
 Once you have correctly installed the `robotology-superbuild` you will have this folder tree for `icub-head`:
@@ -137,12 +149,14 @@ These folder trees are reflected also in the build directory.
 For example, you can find the `YARP` build directory in `$ROBOT_CODE/robotology-superbuild/build/robotology/YARP`.
 
 
-## Run the software 
+## Run the software :rocket:
 
-If the `make` command of the robotology-superbuild was successful, you just need to reboot the machine (or source again the `.bashrc_iCub`  file) and 
+If the `make` command of the robotology-superbuild was successful, you just need to modify `~/.bashrc_iCub` uncommenting `#export OBJ_SUBDIR="build"` source it again and 
 you will then be ready to use all the software provided by the robotology-superbuild.
 
-## Existing Wiki Documentation 
+For checking your installation run on a terminal `yarpserver --write`, and in another `iCub_SIM`.
+
+## Existing Wiki Documentation 👓
 Most of the existing documentation regarding the installation of the software on the pc104/icub-head 
 
 | Normal page            |  Superbuild version           |
@@ -153,5 +167,8 @@ Most of the existing documentation regarding the installation of the software on
 | http://wiki.icub.org/wiki/MacOSX:_installation  |  http://wiki.icub.org/wiki/MacOS:Installation_from_sources_using_the_robotology-superbuild |  
 | http://wiki.icub.org/wiki/ICub_server_laptop_installation_instructions | Change the last code box in section http://wiki.icub.org/wiki/ICub_server_laptop_installation_instructions#Software_repositories to `git clone https://github.com/robotology/robotology-superbuild.git` | 
 | http://wiki.icub.org/wiki/Compilation_on_the_pc104 | https://wiki.icub.org/wiki/Compilation_on_the_pc104/icub-head_with_the_robotology-superbuild  | 
-| https://git.robotology.eu/MBrunettini/icub-environment/raw/master/home/bashrc_iCub |  https://git.robotology.eu/MBrunettini/icub-environment/raw/master/home/bashrc_iCub_superbuild | 
+| https://git.robotology.eu/MBrunettini/icub-environment/raw/master/home/bashrc_iCub |  https://git.robotology.eu/MBrunettini/icub-environment/raw/master/home/bashrc_iCub_superbuild |
 
+## FAQ 🙋🏻‍♂️ 
+
+Check it out the [FAQ section.](FAQ.md)
