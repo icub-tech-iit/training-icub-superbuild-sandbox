@@ -9,5 +9,5 @@ workspaceLocation: "."
 tasks:
 - command: start-vnc-session.sh
 - command: gp await-port 6080 && gp preview $(gp url 6080)
-- command: cd ${HOME} && wget https://raw.githubusercontent.com/icub-tech-iit/icub-setup-installation/master/.bashrc_iCub
-- command: cd ~ && printf "if [ -f ~/.bashrc_iCub ]; then\n . ~/.bashrc_iCub\nfi" | cat - ~/.bashrc > temp && mv temp ~/.bashrc && cd -
+- command: cd ${HOME} && wget -O .bashrc_iCub https://git.robotology.eu/MBrunettini/icub-environment/-/raw/master/bashrc_iCub_superbuild
+- command: cd ~ && printf "if [ -f ~/.bashrc_iCub ]; then\n . ~/.bashrc_iCub\nfi" | cat - ~/.bashrc > temp && mv temp ~/.bashrc && source ~/.bashrc && cd -
