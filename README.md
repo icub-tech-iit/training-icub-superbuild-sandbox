@@ -9,7 +9,7 @@
   + [Dependencies :books:](#dependencies-books)
 * [Get software source code, compile and install - `icub-head` :robot:](#get-software-source-code-compile-and-install---icub-head-robot)
 * [Get software source code, compile and install - `icubsrv` :computer:](#get-software-source-code-compile-and-install---icubsrv-computer)
-* [Folder tree of robotology-superbuild 🌿](#folder-tree-of-robotology-superbuild-🌿)
+* [Folder tree of robotology-superbuild 🌿](#folder-tree-of-robotology-superbuild-herb)
 * [Run the software :rocket:](#run-the-software-rocket)
 * [Existing Wiki Documentation 👓](#existing-wiki-documentation-)
 * [FAQ 🙋🏻‍♂️](#faq-%EF%B8%8F)
@@ -107,7 +107,7 @@ make
 
 where `<release>` is the release version on which the iCub has to be setupped.
 
-## Folder tree of robotology-superbuild :leaf:
+## Folder tree of robotology-superbuild :herb:
 
 One of the main difference to get used to is the different folder tree structure respect the old approach with the clone of the single repositories.
 Once you have correctly installed the `robotology-superbuild` you will have this folder tree for `icub-head`:
