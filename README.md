@@ -6,7 +6,7 @@
 * [Introduction ℹ](#introduction-)
 * [Prepare your system :gear:](#prepare-your-system--gear)
   + [Env variables 🌐](#env-variables-)
-  👨‍🏫+ [Dependencies :books:](#dependencies--books)
+  + [Dependencies :books:](#dependencies--books)
 * [Get software source code, compile and install - `icub-head` :robot:](#get-software-source-code--compile-and-install----icub-head---robot)
 * [Get software source code, compile and install - `icubsrv` :computer:](#get-software-source-code--compile-and-install----icubsrv---computer)
 * [Folder tree of robotology-superbuild :leaf:](#folder-tree-of-robotology-superbuild--leaf)
