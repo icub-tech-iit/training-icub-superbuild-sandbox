@@ -19,13 +19,31 @@ use the robotology-superbuild on the computer contained in the head of the iCub 
 without coordinating with the iCub support. For any doubt, please open an issue at [`robotology/icub-tech-support`](https://github.com/robotology/icub-tech-support/issues).**
 
 ## Prepare your system 
+### Env variables
 The operating system contained in the `icub-head`/`pc104` is tipically installed by IIT, for more information on it, please
-check the relevant documentation at http://wiki.icub.org/wiki/The_Linux_on_the_pc104 . On this machine, 
-in `/home/icub/.bashrc_iCub` a script containing several enviroment variables definitions is provided. If you want to  migrate to use
+check the relevant documentation at http://wiki.icub.org/wiki/The_Linux_on_the_pc104.
+
+On this machine, in `/home/icub/.bashrc_iCub` a script containing several enviroment variables definitions is provided. If you want to  migrate to use
 the robotology-superbuild, you need to remove the existing `.bashrc_iCub` file, and substitute it with the one provided in https://git.robotology.eu/MBrunettini/icub-environment/raw/master/bashrc_iCub_superbuild.
+
 After you modified the `.bashrc_iCub` script, reboot the computer and  in a new shell check che values of the `ROBOTOLOGY_SUPERBUILD_SOURCE_DIR` and `YARP_ROBOT_NAME` env variables.
 If `ROBOTOLOGY_SUPERBUILD_SOURCE_DIR` contains `/usr/local/src/robot/robotology-superbuild`, and `YARP_ROBOT_NAME` contains the string specific to your robot,
 then the modification of the `.bashrc_iCub` was successful. 
+
+### Dependencies
+
+Before proceeding with the installation of the superbuild, it is necessary to install the dependencies of our software.
+This can be done simply following these steps:
+
+```sh
+sudo sh -c 'echo "deb http://www.icub.org/ubuntu <distro> contrib/science" > /etc/apt/sources.list.d/icub.list'
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
+sudo apt update
+sudo apt install -y icub-common
+
+```
+
+:warning: note that since in gitpod is not possible to execute sudo commands(e.g. `sudo apt install ..`), the dependencies are already installed in the docker, then this step is not part of the assignment. 
 
 ## Get software source code, compile and install - `icub-head`
 On the `icub-head`/`pc104`, the software repository necessary to run the iCub robot are contained in the `/usr/local/src/robot` directory.
