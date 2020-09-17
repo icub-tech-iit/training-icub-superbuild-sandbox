@@ -31,7 +31,7 @@ then the modification of the `.bashrc_iCub` was successful.
 On the `icub-head`/`pc104`, the software repository necessary to run the iCub robot are contained in the `/usr/local/src/robot` directory.
 On a new machine, this directory should be empty. All the relevant software can download and build with the following commands:
 ~~~sh
-cd /usr/local/src/robot
+cd ${ROBOT_CODE}
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 git checkout v<release>
@@ -61,7 +61,7 @@ See the main robotology-superbuild README for more detailed information.**
 The steps for setupping the `icubsrv` are the same, but are different the flags needed in the configuration phase of the superbuild:
 
 ~~~sh
-cd /usr/local/src/robot
+cd ${ROBOT_CODE}
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 git checkout v<release>
