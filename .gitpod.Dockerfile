@@ -26,6 +26,7 @@ RUN apt install -y python3 python3-dev python3-pip python3-setuptools && \
 
 RUN sh -c 'echo "deb http://www.icub.org/ubuntu focal contrib/science" > /etc/apt/sources.list.d/icub.list'
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
+RUN apt update
 RUN apt install icub-common
 
 # Core dependencies
