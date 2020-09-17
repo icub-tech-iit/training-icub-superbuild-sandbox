@@ -109,6 +109,7 @@ Once you have correctly installed the `robotology-superbuild` you will have this
         ├── YARP
         ├── YCM
         ├── icub-tests
+        ├── icub-models
         ├── icub_firmware_shared
         └── robots-configuration
 ```
@@ -127,6 +128,7 @@ And this folder tree on `icubsrv`:
         ├── funny-things
         ├── icub-basic-demos
         ├── icub-tests
+        ├── icub-models
         ├── robots-configuration
         └── speech
 ```
