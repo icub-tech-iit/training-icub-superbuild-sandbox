@@ -9,7 +9,7 @@ Using a specific tag(e.g. `v2020.08`) the superbuild puts all the repos to the t
 It exists a CMake argument called `YCM_EP_DEVEL_MODE_<package_name>` that, if set to `TRUE`, allows to ovverride manually the branch/tag of `<package_name>` repository.
 Note that if set to `FALSE` any time you will do `make` in the `ROBOTOLOGY_SUPERBUILD_BUILD_DIR`, it will overwrite any user modification/checkout.
 
-Once that CMake variable has been set to `TRUE`, to access to the source of `robots-configuration` and checkout to the `<development_branch>`:
+Once that CMake variable has been set to `TRUE`, access to the source of `robots-configuration` and checkout to the `<development_branch>`:
 ```sh
 cd $ROBOT_CODE/robotology-superbuild/robotology/robots-configuration
 git checkout <development_branch>
