@@ -1,4 +1,5 @@
-# icub-setup-installation
+How to Install Laptops for iCub (PROTO) Setup
+=============================================
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/icub-tech-iit/icub-setup-installation)
 ## TOC 📑
