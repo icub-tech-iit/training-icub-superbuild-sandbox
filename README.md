@@ -63,8 +63,10 @@ where `<release>` is the release version on which the iCub has to be setupped.
 The main difference over the standard installation of the robotology-superbuild, is that the `ROBOTOLOGY_USES_GAZEBO` option
 is disabled (as the Gazebo is tipically not installed in the `icub-head`/`pc104` machine) and the `ROBOTOLOGY_ENABLE_ICUB_HEAD` option
 is enabled, to enable all the YARP devices that are necessary to interface with the internal communication bus of the iCub robot.
+
 Moreover, `YCM_EP_DEVEL_MODE_robots-configuration` is set to `ON`, in this way the user can define a specific branch of `robots-configuration` instead of master.
-The handle of robots-configuration inside the superbuild is treated in the dedicated section
+The handle of robots-configuration inside the superbuild is treated [in the dedicated section.](TBA)
+
 The `make` command in this case will download, compile and install all the software necessary to run the robot itself.
 
 If you need to use other *superbuild profiles*, they can be easily enabled with the corresponding CMake option.
