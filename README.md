@@ -66,7 +66,7 @@ cd ${ROBOT_CODE}
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 git checkout v<release>
-mkdir build
+mkdir build && cd build
 cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON YCM_EP_DEVEL_MODE_robots-configuration:BOOL=ON ..
 make
 ~~~
@@ -101,7 +101,7 @@ cd ${ROBOT_CODE}
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 git checkout v<release>
-mkdir build
+mkdir build && cd build
 cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON ..
 make
 ~~~
