@@ -21,5 +21,6 @@ cd $ROBOTOLOGY_SUPERBUILD_BUILD_DIR
 make
 ```
 
-Note 1: Remember to check if `YARP_ROBOT_NAME` is defined correctly before installing `robots-configuration`
-Note 2: It is sufficient to execute once the command `cmake -DYCM_EP_DEVEL_MODE_robots-configuration:BOOL=ON ..`, this option will be enabled until the build is canceled/cleaned up.
+### Notes
+1. Remember to check if `YARP_ROBOT_NAME` is defined correctly before installing `robots-configuration`
+1. It is sufficient to execute once the command `cmake -DYCM_EP_DEVEL_MODE_robots-configuration:BOOL=ON ..`, this option will be enabled until the build is canceled/cleaned up.
