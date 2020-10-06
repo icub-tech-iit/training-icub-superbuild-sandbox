@@ -71,6 +71,7 @@ cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON YC
 make
 ~~~
 where `<release>` is the release version on which the iCub has to be setupped(e.g `v2020.08`).
+The latest and other `robotology-superbuild` releases can be found [here](https://github.com/robotology/robotology-superbuild/releases).
 
 The main difference over the standard installation of the robotology-superbuild, is that the `ROBOTOLOGY_USES_GAZEBO` option
 is disabled (as the Gazebo is tipically not installed in the `icub-head`/`pc104` machine) and the `ROBOTOLOGY_ENABLE_ICUB_HEAD` option
