@@ -70,7 +70,7 @@ mkdir build && cd build
 cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON YCM_EP_DEVEL_MODE_robots-configuration:BOOL=ON ..
 make
 ~~~
-where `<release>` is the release version on which the iCub has to be setupped(e.g `v2020.08`).
+where `<release>` is the release version on which the iCub has to be setupped(e.g `v2020.08.patch-01`).
 The latest and other `robotology-superbuild` releases can be found [here](https://github.com/robotology/robotology-superbuild/releases).
 
 The main difference over the standard installation of the robotology-superbuild, is that the `ROBOTOLOGY_USES_GAZEBO` option
@@ -107,7 +107,7 @@ cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOO
 make
 ~~~
 
-where `<release>` is the release version on which the iCub has to be setupped(e.g `v2020.08`).
+where `<release>` is the release version on which the iCub has to be setupped(e.g `v2020.08.patch-01`).
 
 ## Folder tree of robotology-superbuild :herb:
 
