@@ -56,6 +56,12 @@ sudo apt install -y icub-common
 ```
 where `<distro>` is the ubuntu\debian distribution(e.g `xenial`, `bionic`, `buster`, `focal`).
 
+If you didn't already configured your git, you have to set your name and email to sign your commits:
+```
+git config --global user.name FirstName LastName
+git config --global user.email user@email.domain
+```
+
 :warning: note that since in gitpod is not possible to execute sudo commands(e.g. `sudo apt install ..`), the dependencies are already installed in the docker, then this step is not part of the assignment. 
 
 ## Get software source code, compile and install - `icub-head` :robot:
