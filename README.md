@@ -56,7 +56,7 @@ sudo apt install -y icub-common
 ```
 where `<distro>` is the ubuntu\debian distribution(e.g `xenial`, `bionic`, `buster`, `focal`).
 
-If you didn't already configured your git, you have to set your name and email to sign your commits:
+If you haven't configured your git yet, you have to set your name and email to sign your commits:
 ```
 git config --global user.name FirstName LastName
 git config --global user.email user@email.domain
