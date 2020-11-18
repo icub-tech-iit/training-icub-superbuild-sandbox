@@ -109,7 +109,7 @@ git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 git checkout v<release>
 mkdir build && cd build
-cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON ..
+cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON -DROBOTOLOGY_ENABLE_ROBOT_TESTING:BOOL=ON ..
 make
 ~~~
 
@@ -125,10 +125,8 @@ Once you have correctly installed the `robotology-superbuild` you will have this
     └── robotology
         ├── ICUB
         ├── ICUBcontrib
-        ├── RobotTestingFramework
         ├── YARP
         ├── YCM
-        ├── icub-tests
         ├── icub-models
         ├── icub_firmware_shared
         └── robots-configuration
@@ -142,6 +140,8 @@ And this folder tree on `icubsrv`:
     └── robotology
         ├── ICUB
         ├── ICUBcontrib
+        ├── blocktestcore
+        ├── blocktest-yarp-plugins
         ├── RobotTestingFramework
         ├── YARP
         ├── YCM
