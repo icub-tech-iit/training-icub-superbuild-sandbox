@@ -6,7 +6,7 @@ It is a common use case that, during the setup of a new `iCub`, it is used a dev
 The superbuild usually puts all repositories on a specific branch or tag.
 
 Using the `master` branch, all the repos are set to `master` (except for YARP that has as stable branch `yarp-3.x`).
-Using a specific tag(e.g. `v2020.08`) the superbuild puts all the repos to the tags specified for that release accordingly to the [sowftware versioning table](https://wiki.icub.org/wiki/Software_Versioning_Table).
+Using a specific tag(e.g. `v2020.08`) the superbuild puts all the repos to the tags specified for that release accordingly to the [software versioning table](https://icub-tech-iit.github.io/documentation/sw_versioning_table/#table).
 
 It exists a CMake argument called `YCM_EP_DEVEL_MODE_<package_name>` that, if set to `ON`, allows to ovverride manually the branch/tag of `<package_name>` repository.
 Note that if set to `OFF` any time you will do `make` in the `ROBOTOLOGY_SUPERBUILD_BUILD_DIR`, it will overwrite any user modification/checkout.
