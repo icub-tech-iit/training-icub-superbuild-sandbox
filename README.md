@@ -122,7 +122,7 @@ Once you have correctly installed the `robotology-superbuild` you will have this
 ```
 └── robotology-superbuild
 ...
-    └── robotology
+    └── src
         ├── ICUB
         ├── ICUBcontrib
         ├── YARP
@@ -137,7 +137,7 @@ And this folder tree on `icubsrv`:
 ```
 └── robotology-superbuild
 ...
-    └── robotology
+    └── src
         ├── ICUB
         ├── ICUBcontrib
         ├── blocktestcore
@@ -154,7 +154,7 @@ And this folder tree on `icubsrv`:
 ```
 
 These folder trees are reflected also in the build directory.
-For example, you can find the `YARP` build directory in `$ROBOT_CODE/robotology-superbuild/build/robotology/YARP`.
+For example, you can find the `YARP` build directory in `$ROBOT_CODE/robotology-superbuild/build/src/YARP`.
 
 
 ## Run the software :rocket:
