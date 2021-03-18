@@ -15,7 +15,7 @@ In this case the variable to be set ot `ON` is `YCM_EP_DEVEL_MODE_robots-configu
 ```sh
 cd $ROBOTOLOGY_SUPERBUILD_BUILD_DIR
 cmake -DYCM_EP_DEVEL_MODE_robots-configuration:BOOL=ON ..
-cd $ROBOT_CODE/robotology-superbuild/robotology/robots-configuration
+cd $ROBOT_CODE/robotology-superbuild/src/robots-configuration
 git checkout <development_branch>
 cd $ROBOTOLOGY_SUPERBUILD_BUILD_DIR
 make
