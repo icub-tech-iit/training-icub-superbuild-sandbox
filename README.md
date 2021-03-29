@@ -40,7 +40,7 @@ This can be done simply following these steps:
 sudo sh -c 'echo "deb http://www.icub.org/ubuntu <distro> contrib/science" > /etc/apt/sources.list.d/icub.list'
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
 sudo apt update
-sudo apt install -y icub-common
+sudo apt install -y icub-common build-essential
 
 ```
 where `<distro>` is the ubuntu\debian distribution(e.g `xenial`, `bionic`, `buster`, `focal`).
