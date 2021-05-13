@@ -21,7 +21,7 @@ without coordinating with the iCub support. For any doubt, please open an issue 
 
 ## Prepare your system :gear:
 ### Env variables 🌐
-The operating system contained in the `icub-head`/`pc104` is tipically installed by IIT, for more information on it, please
+The operating system contained in the `icub-head`/`pc104` is tipically installed by IIT(the images can be downloaded from [here](https://icub-tech-iit.github.io/documentation/icub_operating_systems/download/)), for more information on it, please
 check the relevant documentation at https://icub-tech-iit.github.io/documentation/icub_operating_systems/pc104/icub-live/.
 
 On this machine, in `/home/icub/.bashrc_iCub` a script containing several enviroment variables definitions is provided. If you want to  migrate to use
