@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install essentials
 RUN apt update
 RUN apt install -y apt-utils software-properties-common apt-transport-https tree gedit sudo psmisc lsb-release \
-        tmux nano wget build-essential git cmake cmake-curses-gui autoconf locales gdebi terminator
+        tmux nano wget build-essential git cmake cmake-curses-gui autoconf locales gdebi terminator bash-completion
 
 # Set the locale
 RUN locale-gen en_US.UTF-8
@@ -28,6 +28,12 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
 RUN apt update
 RUN apt install -y icub-common
 
+# Install magic-wormwhole to get things from one computer to another safely
+RUN apt install -y magic-wormhole
+
+# Install informative git for bash
+RUN git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+RUN echo "source \${HOME}/.bash-git-prompt/gitprompt.sh" >> ~/.bashrc
 # Install noVNC
 RUN git clone https://github.com/novnc/noVNC.git /opt/novnc && \
     git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \
