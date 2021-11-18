@@ -161,7 +161,7 @@ Most of the existing documentation regarding the installation of the software on
 | https://icub-tech-iit.github.io/documentation/sw_installation/windows_binaries/ | https://icub-tech-iit.github.io/documentation/sw_installation/windows_from_sources_superbuild/ | 
 |  https://icub-tech-iit.github.io/documentation/sw_installation/linux_from_sources_manual/ |  https://icub-tech-iit.github.io/documentation/sw_installation/linux_from_sources_superbuild/  | 
 | -  |  https://icub-tech-iit.github.io/documentation/sw_installation/macos_from_sources_superbuild/ |  
-| https://icub-tech-iit.github.io/documentation/icub_operating_systems/other-machines/icub-server-laptop/ | Change the last code box in sectionhttps://icub-tech-iit.github.io/documentation/icub_operating_systems/other-machines/icub-server-laptop/#software-repositories to `git clone https://github.com/robotology/robotology-superbuild.git` | 
+| https://icub-tech-iit.github.io/documentation/icub_operating_systems/other-machines/icub-server-laptop/ | Change the last code box in section https://icub-tech-iit.github.io/documentation/icub_operating_systems/other-machines/icub-server-laptop/#software-repositories to `git clone https://github.com/robotology/robotology-superbuild.git` | 
 | https://icub-tech-iit.github.io/documentation/sw_installation/icub_head_manual/ | https://icub-tech-iit.github.io/documentation/sw_installation/icub_head_superbuild/ | 
 | https://github.com/icub-tech-iit/icub-os-files/blob/master/user-environment/bashrc_iCub | https://github.com/icub-tech-iit/icub-os-files/blob/master/user-environment/bashrc_iCub_superbuild |
 
