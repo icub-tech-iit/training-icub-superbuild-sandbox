@@ -30,16 +30,14 @@ After you modified the `.bashrc_iCub` script, reboot the computer and  in a new 
 If `ROBOTOLOGY_SUPERBUILD_SOURCE_DIR` contains `/usr/local/src/robot/robotology-superbuild`, and `YARP_ROBOT_NAME` contains the string specific to your robot,
 then the modification of the `.bashrc_iCub` was successful. 
 
-### Dependencies :books:
+### Preliminary steps :books:
 
 Before proceeding with the installation of the superbuild, it is necessary to install the dependencies of our software.
 This can be done simply following these steps:
 
 ```sh
-sudo sh -c 'echo "deb http://www.icub.org/ubuntu <distro> contrib/science" > /etc/apt/sources.list.d/icub.list'
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 57A5ACB6110576A6
 sudo apt update
-sudo apt install -y icub-common build-essential
+sudo apt install -y build-essential
 
 ```
 where `<distro>` is the ubuntu\debian distribution(e.g `xenial`, `bionic`, `buster`, `focal`).
@@ -50,9 +48,7 @@ git config --global user.name FirstName LastName
 git config --global user.email user@email.domain
 ```
 
-:warning: note that since in gitpod is not possible to execute sudo commands(e.g. `sudo apt install ..`), the dependencies are already installed in the docker, then this step is not part of the assignment. 
-
-## Get software source code, compile and install - `icub-head` :robot:
+## Get software source code and dependencies, compile and install - `icub-head` :robot:
 On the `icub-head`/`pc104`, the software repository necessary to run the iCub robot are contained in the `/usr/local/src/robot` directory.
 On a new machine, this directory should be empty. All the relevant software can download and build with the following commands:
 ~~~sh
@@ -60,6 +56,7 @@ cd ${ROBOT_CODE}
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 git checkout v<release>
+sudo bash ./scripts/install_apt_dependencies.sh
 mkdir build && cd build
 cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_HEAD:BOOL=ON YCM_EP_DEVEL_MODE_robots-configuration:BOOL=ON ..
 make
@@ -87,7 +84,7 @@ See the main robotology-superbuild README for more detailed information.**
 
 **Important: since [`icub-firmware-build`]("https://github.com/robotology/icub-firmware-build") does not contains sources to be compiled, but just binaries, it is not included in the superbuild, then it has to be cloned separately.**
 
-## Get software source code, compile and install - `icubsrv` :computer:
+## Get software source code and dependencies, compile and install - `icubsrv` :computer:
 
 The steps for setupping the `icubsrv` are the same, but are different the flags needed in the configuration phase of the superbuild:
 
@@ -96,6 +93,7 @@ cd ${ROBOT_CODE}
 git clone https://github.com/robotology/robotology-superbuild.git
 cd robotology-superbuild
 git checkout v<release>
+sudo bash ./scripts/install_apt_dependencies.sh
 mkdir build && cd build
 cmake -DROBOTOLOGY_USES_GAZEBO:BOOL=OFF -DROBOTOLOGY_ENABLE_ICUB_BASIC_DEMOS:BOOL=ON -DROBOTOLOGY_ENABLE_ROBOT_TESTING:BOOL=ON ..
 make
