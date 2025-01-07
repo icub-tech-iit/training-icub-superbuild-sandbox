@@ -1,0 +1,14 @@
+{
+	"name": "CDE for robotology-superbuild training",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"forwardPorts": [6080],
+	"remoteUser": "codespace",
+    "postAttachCommand": {
+        "vnc": "start-vnc-session.sh",
+        "download_bashrc": "cd ${HOME} && wget -O .bashrc_iCub https://raw.githubusercontent.com/icub-tech-iit/icub-os-files/master/user-environment/bashrc_iCub_superbuild",
+        "append_bashrc": "cd ${HOME} && printf \"if [ -f ~/.bashrc_iCub ]; then\n . ~/.bashrc_iCub\nfi\" | cat - ~/.bashrc > temp && mv temp ~/.bashrc && source ~/.bashrc && cd -",
+        "set_obj_subdir": "cd ~ && printf \"export OBJ_SUBDIR=build\n\" | cat - ~/.bashrc > temp && mv temp ~/.bashrc && source ~/.bashrc && cd -"
+    }
+}
