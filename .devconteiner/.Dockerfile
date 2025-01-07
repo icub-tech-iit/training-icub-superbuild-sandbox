@@ -13,7 +13,7 @@ RUN apt install -y apt-utils software-properties-common apt-transport-https tree
 RUN locale-gen en_US.UTF-8
 
 # Install graphics
-RUN apt install -y xfce4 xfce4-goodies xserver-xorg-video-dummy xserver-xorg-legacy x11vnc && \
+RUN apt install -y xfce4 xfce4-goodies xserver-xorg-video-dummy xserver-xorg-legacy x11vnc dbus-x11 && \
     apt remove -y xfce4-power-manager light-locker && \
     sed -i 's/allowed_users=console/allowed_users=anybody/' /etc/X11/Xwrapper.config
 
@@ -29,7 +29,6 @@ RUN git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prom
 RUN echo "source \${HOME}/.bash-git-prompt/gitprompt.sh" >> ~/.bashrc
 # Install noVNC
 RUN git clone https://github.com/novnc/noVNC.git /opt/novnc && \
-    git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \
     echo "<html><head><meta http-equiv=\"Refresh\" content=\"0; url=vnc.html?autoconnect=true&reconnect=true&reconnect_delay=1000&resize=scale&quality=9\"></head></html>" > /opt/novnc/index.html
 
 # Set up script to launch graphics and vnc
@@ -38,8 +37,8 @@ RUN echo "pkill -9 -f \"vnc\" && pkill -9 -f \"xf\" && sudo pkill -9 Xorg" >> ${
     echo "sudo rm -f /tmp/.X1-lock" >> ${START_VNC_SESSION} && \
     echo "sudo nohup X \${DISPLAY} -config /etc/X11/xorg.conf > /dev/null 2>&1 &" >> ${START_VNC_SESSION} && \
     echo "nohup startxfce4 > /dev/null 2>&1 &" >> ${START_VNC_SESSION} && \
-    echo "nohup x11vnc -localhost -display \${DISPLAY} -N -forever -shared -bg > /dev/null 2>&1" >> ${START_VNC_SESSION} && \
-    echo "nohup /opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5901 --listen 6080 > /dev/null 2>&1 &" >> ${START_VNC_SESSION} && \
+    echo "sudo nohup x11vnc -localhost -display \${DISPLAY} -N -forever -shared -bg > /dev/null 2>&1" >> ${START_VNC_SESSION} && \
+    echo "sudo nohup /opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5901 --listen 6080 > /dev/null 2>&1 &" >> ${START_VNC_SESSION} && \
     chmod +x ${START_VNC_SESSION}
 
 # X11 configuration
@@ -66,16 +65,16 @@ RUN echo "Section \"Monitor\"" >> ${XORG_CONF} && \
     echo "EndSubSection" >> ${XORG_CONF} && \
     echo "EndSection" >> ${XORG_CONF}
 
-# Create user gitpod
-RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod && \
+# Create user codespace
+RUN useradd -l -u 33333 -G sudo -md /home/codespace -s /bin/bash -p codespace codespace && \
     # passwordless sudo for users in the 'sudo' group
     sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
 
-# Switch to gitpod user
-USER gitpod
+# Switch to codespace user
+USER codespace
 
 # Create the Desktop dir
-RUN mkdir -p /home/gitpod/Desktop
+RUN mkdir -p /home/codespace/Desktop
 
 # Switch back to root
 USER root
@@ -83,8 +82,8 @@ USER root
 # Create the robot code dir
 RUN mkdir -p /usr/local/src/robot
 
-# Assign rights to gitpod user
-RUN chown gitpod /usr/local/src/robot
+# Assign rights to codespace user
+RUN chown codespace /usr/local/src/robot
 
 # Manage x11vnc, noVNC, and yarp ports
 EXPOSE 5901 6080 10000/tcp 10000/udp
@@ -95,6 +94,6 @@ ENV DISPLAY=:1
 # Clean up unnecessary installation products
 RUN rm -Rf /var/lib/apt/lists/*
 
-# Launch bash from /workspace
-WORKDIR /workspace
+# Launch bash from /workspaces
+WORKDIR /workspaces
 CMD ["bash"]
